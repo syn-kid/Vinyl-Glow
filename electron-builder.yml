@@ -1,0 +1,22 @@
+appId: com.vinylglow.app
+productName: Vinyl Glow
+directories:
+  buildResources: build
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron/*'
+  - '!{.eslintignore,.eslintrc.cjs,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml,package-lock.json,yarn.lock}'
+  - '!{tsconfig.json,tsconfig.node.json,electron.vite.config.{js,ts,mjs,cjs},tailwind.config.ts,postcss.config.js}'
+asarUnpack:
+  - resources/**
+win:
+  executableName: VinylGlow
+  target:
+    - nsis
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
